@@ -1,5 +1,7 @@
 package Classes;
 
+import CustomException.CustomException;
+
 import java.util.List;
 import java.util.Vector;
 
@@ -26,15 +28,11 @@ public class Catalogue {
 
 
     public void  setDocumentList(List<Document> documentList) {
-        try {
             if(isHeaderExsits(document,documentList)){
-                throw new Exception();
+                throw new CustomException();
             }
             this.documentList.add(document);
-        }
-        catch (Exception e){
-            e.printStackTrace();
-        }
+
     }
 
     public List<Document> getDocumentList() {
